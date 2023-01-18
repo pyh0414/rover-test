@@ -14,7 +14,8 @@ type Query {
 
 type Test {
   id: ID!
-  name: String!
+  name1: String!
+  name2: String!
 }
 
 type User {

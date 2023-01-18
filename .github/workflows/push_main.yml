@@ -7,9 +7,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      APOLLO_KEY: ${{ secrets.APOLLO_GRAPH_REF }}
     steps:
       - uses: actions/checkout@v3
+
+      - name: test
+        run: |
+          echo $APOLLO_KEY
 
       - name: Install Rover
         run: |

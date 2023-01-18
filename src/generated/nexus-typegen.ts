@@ -36,7 +36,8 @@ export interface NexusGenObjects {
   Query: {};
   Test: { // root type
     id: string; // ID!
-    name: string; // String!
+    name1: string; // String!
+    name2: string; // String!
   }
   User: { // root type
     id: string; // ID!
@@ -65,7 +66,8 @@ export interface NexusGenFieldTypes {
   }
   Test: { // field return type
     id: string; // ID!
-    name: string; // String!
+    name1: string; // String!
+    name2: string; // String!
   }
   User: { // field return type
     id: string; // ID!
@@ -85,7 +87,8 @@ export interface NexusGenFieldTypeNames {
   }
   Test: { // field return type name
     id: 'ID'
-    name: 'String'
+    name1: 'String'
+    name2: 'String'
   }
   User: { // field return type name
     id: 'ID'

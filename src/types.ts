@@ -77,7 +77,8 @@ const Test = objectType({
   name: "Test",
   definition: (t) => {
     t.nonNull.id("id");
-    t.nonNull.string("name");
+    t.nonNull.string("name1");
+    t.nonNull.string("name2");
   },
 });
 
