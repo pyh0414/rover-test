@@ -3,13 +3,18 @@
 
 
 type Post {
-  authorId: Int!
+  authorId: ID!
   content: String!
   id: ID!
 }
 
 type Query {
   users: [User]
+}
+
+type Test {
+  id: ID!
+  name: String!
 }
 
 type User {

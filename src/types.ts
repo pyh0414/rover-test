@@ -58,7 +58,7 @@ const User = objectType({
     t.nonNull.list.nonNull.field("posts", {
       type: "Post",
       resolve: (parent) => {
-        return posts.filter((v) => v.authorId === parent.id);
+        return posts.filter((v) => v.authorId === parent.id!);
       },
     });
   },
@@ -69,7 +69,15 @@ const Post = objectType({
   definition: (t) => {
     t.nonNull.id("id");
     t.nonNull.string("content");
-    t.nonNull.int("authorId");
+    t.nonNull.id("authorId");
+  },
+});
+
+const Test = objectType({
+  name: "Test",
+  definition: (t) => {
+    t.nonNull.id("id");
+    t.nonNull.string("name");
   },
 });
 
@@ -83,4 +91,4 @@ const Query = objectType({
   },
 });
 
-export default { User, Post, Query };
+export default { User, Post, Query, Test };
