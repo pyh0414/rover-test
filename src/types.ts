@@ -79,6 +79,7 @@ const Test = objectType({
     t.nonNull.id("id");
     t.nonNull.string("name1");
     t.nonNull.string("name2");
+    t.nonNull.string("name3");
   },
 });
 
