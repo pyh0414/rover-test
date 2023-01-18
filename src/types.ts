@@ -73,16 +73,6 @@ const Post = objectType({
   },
 });
 
-const Test = objectType({
-  name: "Test",
-  definition: (t) => {
-    t.nonNull.id("id");
-    t.nonNull.string("name1");
-    t.nonNull.string("name2");
-    t.nonNull.string("name3");
-  },
-});
-
 const Query = objectType({
   name: "Query",
   definition: (t) => {
@@ -93,4 +83,4 @@ const Query = objectType({
   },
 });
 
-export default { User, Post, Query, Test };
+export default { User, Post, Query };

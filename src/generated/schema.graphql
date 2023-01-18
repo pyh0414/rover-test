@@ -12,13 +12,6 @@ type Query {
   users: [User]
 }
 
-type Test {
-  id: ID!
-  name1: String!
-  name2: String!
-  name3: String!
-}
-
 type User {
   id: ID!
   name: String!
