@@ -9,12 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
+      - name: Install Rover
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          curl -sSL https://rover.apollo.dev/nix/v0.10.0 | sh
+          echo "$HOME/.rover/bin" >> $GITHUB_PATH
+
+      - name: Run check against prod
+        run: |
+          rover graph publish ${{ secrets.APOLLO_GRAPH_REF }} --schema src/generated/schema.graphql
